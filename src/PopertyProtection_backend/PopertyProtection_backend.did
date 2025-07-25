@@ -1,0 +1,15 @@
+type IPRegistration = record {
+    owner: principal;
+    title: text;
+    description: text;
+    timestamp: nat64;
+    file_hash: text;
+    license_type: text;
+    metadata: vec record { text; text; };
+};
+
+service : {
+    "register_ip": (text, text, text, text, vec record { text; text; }) -> (variant { Ok; Err: text; });
+    "get_ip_registration": (principal) -> (opt IPRegistration) query;
+    "verify_ownership": (principal, text) -> (bool) query;
+}
