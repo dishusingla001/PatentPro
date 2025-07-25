@@ -1,0 +1,38 @@
+{
+  "canisters": {
+    "PopertyProtection_backend": {
+      "candid": "src/PopertyProtection_backend/PopertyProtection_backend.did",
+      "package": "PopertyProtection_backend",
+      "type": "rust"
+    },
+    "PopertyProtection_frontend": {
+      "dependencies": [
+        "PopertyProtection_backend"
+      ],
+      "source": [
+        "src/PopertyProtection_frontend/dist"
+      ],
+      "type": "assets",
+      "workspace": "PopertyProtection_frontend"
+    },
+    "internet_identity": {
+      "candid": "https://github.com/dfinity/internet-identity/releases/latest/download/internet_identity.did",
+      "frontend": {},
+      "remote": {
+        "id": {
+          "ic": "rdmx6-jaaaa-aaaaa-aaadq-cai"
+        }
+      },
+      "type": "custom",
+      "wasm": "https://github.com/dfinity/internet-identity/releases/latest/download/internet_identity_dev.wasm.gz"
+    }
+  },
+  "defaults": {
+    "build": {
+      "args": "",
+      "packtool": ""
+    }
+  },
+  "output_env_file": ".env",
+  "version": 1
+}
